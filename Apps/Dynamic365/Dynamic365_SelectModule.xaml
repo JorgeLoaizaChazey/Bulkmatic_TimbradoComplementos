@@ -1,0 +1,195 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Dynamic365_SelectModule" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrDynamic365Module" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooSelectModule" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>682,1666</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Dynamic365_SelectModule_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Dynamic365_SelectModule" sap:VirtualizedContainerService.HintSize="692,1601" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch Dynamic365_SelectModule" sap:VirtualizedContainerService.HintSize="630,1490" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="592,986" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Select Module&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Select Module" sap:VirtualizedContainerService.HintSize="530,743" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,526" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Click &quot; + in_StrDynamic365Module]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click in_StrDynamic365Module" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?runinframe=1" DesignTimeRectangle="96, 186, 207, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Conciliaciones…enta ban…'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aria-label='{0}' tag='SPAN' /&gt;&quot;, in_StrDynamic365Module)]" Guid="d45b3792-5ffc-4dc7-b598-6471c43af6f9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANMAAAAZCAYAAACrdBsLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARjSURBVHhe7Zk/ihRhEMX3Bp5AT+ANPIgn8AR6AcFEDBQDwUAwMBRBEASVDcRA8QAaabIewI00Gv0NvOHNs3q6e6dZHawfND39/amqV/XVzOzs0appmkXoZmqahehmapqF6GZqmoXoZmqahehmapqF6GZqmoX4Z5vp+4+fqyuPn6yuPnu+fn5/8m118f6D9V3PF+7cXT399Hn9vC/4wR9+m/3Jeh0anCvO15z4y2Y6OT1dXfqdiKNbtzcXz4yfF91Mh03W69BYpJluvn1XGrn24uVfTcyhF+dQ0JsY52Af/sd6bTUT3Xjen0BT6WY6H7qZzs6mmeYmkcbzr4H5FUmNqY9LrePZya+U+lTMeLI4VbH4qiY7lS/ZrNawV18pBb59bc5P1UiMPp92xuKeQ8bstpQzxa01nmOP0+eyTrze9aYrX6++fN3KeWpPn3mOWM/luirfaNJ82smcSBMoznsfPq7jkG3lSH6m6N80k4xyH4NgcOxrEewOJC5F+Rol0sUhivG5zcSdvQL/HqOS4cVkDReoaCL1KB7XM1Wjxyk78sX6tKmY5pK28EkOZE/PWSfPk+LzmoDqIojffSXyNVaDG2+O/8hx1sEboFrDXGq4/vp4fcc2PoTiypykFuY9T1P0bzXT5YePNpuHUEKy4DmeRYJcQ0CeFEdJUxKxs6uZkvSVBy3xWIZs5/hUjXkwmWMNa3flYA7Yon4Zc+rygwSZ53wewjVUVL5gbF/Widizbm6Dy/M9Ruo7a5zV/OxPJuaHmg7hCrJy5sIlKkWISvRYM/GaxOijmEv2PbYKP3TsyQJCxsx9ikaPR5f2KWYu1zKXSrsu6WJN5izznM8OY243tTuVL6jGic/teu69LsLzjp2xDwHVxH0MnStR1XZM/6aZ5FAHZYhdwSNaQU49aEP+sqgpOp/x7Qcy9XhsFV409nhBRcbMfR+NDmso0Fmbij1jhypzBpnnfAZp8pxU2p3KF/g4F3qVd8Cv+/G6CPeNjV26sUdeVYPU5/E47mOq/k0zAUH7hgoZVnAixytnuaZKlBgT7c9VTDmWRUo8lvQlcnxfjUlqnkOVg6TSlT6rGCqd1ZhT+QKvQ1WTHKvy57536a605NhQnO5jqv6tZpKjXAT+fyYCyXdQBHsSKme8ZkzC2Y8dF3uWHyCqpBGPvyPJtxeGOc1n0Xjt8ctH7h/TyN3jAGLWjyXVH+DSwd3t5zOxeM4zZvA/nD1nYih3rjP3SWP6clhLbX2NxuQr86f51OSxQO7Dnp9H9uoHiNzPWuqhGNgz1ky5hjHmPAbYaiYhh36loFwzJhgURB4sEiE7SmQWOQVVz26HQ5S+5F9rPL5MOvCstVyKRUzVyGu3k359zn3w2tfmM3v94EHac02ZM8g8g+dS49xlkxiUX9fuyBfrvC7uBzxe4qAJXBPzrgGqvHt87oc1rNW47Gu+ygmkjyn6y2ZqmmY+3UxNsxDdTE2zEN1MTbMQ3UxNsxDdTE2zCKvVL1C80tSlK5sqAAAAAElFTkSuQmCC" InformativeScreenshot="18a2183af21272cd81345730db3db222.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Assign DisplayName="Assign out_BooSelectModule" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_BooSelectModule]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK0SURBVDhPjVJbSFRRFN3XHv6ETY4hQtEQEZWV1E8ffQcR9FURBdVEEVRURiSF4VUxRyfHaZzm5ah3ymbsIUr9+WH2UspXJVpqOlOmWNp4c1Skn7Pad7pUDEQtWJzD5qzFOntv+huU+XlTzez3SDXTw3e9/B9QFAP56/L3vuxRq2e+Q+PBzt4IuQIKeZR/GFXWmakypEqVIZFW2xgXazQG7oEqapjVKtn92frrBPhC2VJlEOStheStFQv9IeRGZ1EQncPiqjohOapA1/2gcp/GI7pKh6fORL6gqok5KtIfNmNrZAJZw5+xaXAMG/pHkdbQBCpzQ7J5tVMl2W7Q1QxvkP93C0yR0diELeEv2Px+HJkDo1j/bgRrez9gTU8YKcodSNfcgqw3BJU65bhW6/YBbpLxZj2S3QGRNTSOjQNjODoyiYbpOSjRGewbHsOq7kGs7OxHUqFNGCv8Yvej1imPqpooPiq9WWe6+5DJcdf1fURwagYP2OD+tzkE1VnUMH1cc0ZjKGPama6pWIRqYr8NzK0dv+LeUedQr4sDUz/FNziNbZINvsbgYAN3lA0Udd60p7VLNVaFsOBygVj9Zggmjrtn8BNck9Pw8uOdvWGkPXuFZU+6kHT4OFKPnRT7bt8N28f5C3E4/DKVc3dlq0gpLseK9rfIeNGL9LYeLH/+GqlPurG0pQPJRTZQjgzKLQKduaj8FGuw8/bZPCpdc4FOnRdLrE6ksdD49BUMLZ1IaW7HosuFoOOnhZRvFZRfymO0JGyl1WXm0YCKHYLO5ogk8wlsd/qwzVMNaf8hSKcvCCmvRJBcArpSck5XJaC4IpssDpWu2rHM5salgXCchjJOls/CPItKecUJW5gIi93EBsqulrZIITdR446mxywslSlb/mP7/gGZO1w4MR0pYGp3vZwAoh+wp93GQ78NrwAAAABJRU5ErkJggg==" InformativeScreenshot="b7f5d6459ed2fa5936312a6838589013.jpg" Selector="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" Title="*Dynamics 365 Business Central*" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="596,161" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Exception Message &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Did You Select Module? &quot; + out_BooSelectModule.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

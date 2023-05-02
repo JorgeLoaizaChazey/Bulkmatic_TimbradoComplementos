@@ -1,0 +1,208 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Dynamic365_SelectCompanyName" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrCompanyName" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooSelectCompanyName" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>682,3022</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Dynamic365_SelectCompanyName_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="52">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Dynamic365_SelectCompanyName" sap:VirtualizedContainerService.HintSize="692,2957" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch Dynamic365_SelectCompanyName" sap:VirtualizedContainerService.HintSize="630,2846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="592,2342" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Select Company Name&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Select Company Name" sap:VirtualizedContainerService.HintSize="530,2099" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1842" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Click Setting&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Setting" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?node=00000000-bd62-0000-152c-2100836bd2d2&amp;page=388&amp;company=BDM&amp;dc=0&amp;bookmark=50%3bEQEAAACLAAAAAAJ7%2f0IAVwBFAEwATAAgAEYAQQBSAEcATwAAAAJ7AzEAMQA4" DesignTimeRectangle="1165, 79, 51, 48" DesignTimeScaleFactor="1" FriendlyName="'A #'" FullSelectorArgument="&lt;webctrl tag='A' parentclass='settings' /&gt;" Guid="76f9f132-ddc2-4565-80e6-2882312e4f47" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADcAAAA0CAYAAAAuT6DoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJSSURBVGhD7Zcv0rMwEId7nJ4jJ+ACdVwAVxeH4gQoXBwuCtEZXFQcDhcVF9W637cB+u8trqHfhElnnmFClk4fstlsD9frFXvlcLlcsFcOx+MReyXJxUqSi5UkFytJLlaSXKwkuVhJcrGS5GLlN3J5i9HdcLsRbkSbr8RswEZyDKdzhep8omsNOTgYyaY5Jg3cIFFPc3MM+3g+DBvIMZQ9CRiFfnS4GY22ypE95jPkVQttbnBjD2VIvC83EdxAjlLQdMhX59bI0RlK1dW579hAroSyBrK4jxm4ULTnHJwlaM8pwZ8rVUgYq1A+ng9HeDkmMDx+LEOtHawWOGfLfHaG0BZO14sgvQxHL+O0zAckqBzjkvYSyfTFfK/SsEOzsp8YmsFCV/O46EnW9GgCV9GAcgzSWHTFXBU9Na2Qrv/GLdQkTqt3H2elgh3boIUloFyB3r4XhpaqpSpfY14gGUcyz3tUiGyP4jXmS4KmZTml1wC5CPl0M/L0EefJO/NM31Ji8Omsyo+4bwheULJpn4k5vViDYa0j8R2L1aiZHzMIOuSHJnuPCUBwueOR01Hg9948ZrybjoFRdZBSotd0wJOw5MveLDpYqq787TvCsIHc2iHuuxIxyYm3bsUT3SFuqZAwWrUGgq+nW8YFGlo95qtkNIe4J2+mntFR9Rx8f+nT8F41qXj4fwhuHOYr9aChz7c728j9pR2njqQoOBUPS8VjJWYDfiNHe46LDkordM1LX7kxP5L7PyS5WElysZLkYiXJxUqSi5UkFyv7lsOOPzuWA/4B8dc1mW05qa4AAAAASUVORK5CYII=" InformativeScreenshot="5138e8707b9e63d2ae200c23b8cbc932.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Click My Setting&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click My Setting" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?company=BDM&amp;bookmark=50%3bEQEAAACLAAAAAAJ7%2f0IAVwBFAEwATAAgAEYAQQBSAEcATwAAAAJ7AzEAMQA4&amp;node=00000000-bd62-0000-152c-2100836bd2d2&amp;page=388&amp;dc=0" DesignTimeRectangle="1017, 164, 198, 37" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'Mi configuración'" FullSelectorArgument="&lt;webctrl class='ms-nav-ctxmenu-itemlink' tag='DIV' innertext='Mi configuración' /&gt;" Guid="e72b1ef9-3445-43e8-855f-59cab7de5549" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMoAAAApCAYAAAB0tbaEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN6SURBVHhe7Zi/SxxBGIb9c/KHXJ3CMqTQtMErUlqkir1FimCVQgKBIKSzCBFsIlgl2gjWFha2lhve1Xf5bjKzN7feehKfB4Zhfn3fNzffuzt7axcXF8319XUjVFMolLtiTUgjM0IBgFkQCkAFCAWgAoQCUAFCAagAoQBUgFAAKkAoABUgFIAKEApABQgFoAKEAlABQgGoAKEAVNAJ5eTXCUIBKCBtSCNrv/+cIRSAAtKGNLIUoezu7jabm5vNzc3Nfc8sp6enzWQyaWtxcHDQbG9vN7e3t237Mbm8vGzW19fbcnR01GxsbLR9TwnFU4pLv13fbw3LZelC2draag8xRWKQKKJQVoVjWXUcQ5Fw9vb27lvwGIwilNxbQkk5nU7bsuoE1VNYcTy1N0gt5+fnK3kLP2eWLpT9/f3s01pjx8fHM2Oqc6Iy8S2kEufqreV+lfgWs13F4nH5FxKHrlvu17yrq6t/hBPta62Kfai2PeE4vS+N7+zstH3yJbsSp65K0W/ct9Z6TEXtnKBjXCqOSfTtGx7G0oWig/OBORF00DpwJWRMqHRexMkXE+Hw8LDtV1+8nzsJo92YRBaHx9METNtaF+NK7ameJxQLxGgs+k/jjfvROr01cnE9ZN8wnFGEkh6w+9OEUl0SSmkstWFk38mbW+sYRBpfbJfsx/XRl0jXpOM5bK/kT9TEFX3N2zcMZxShCB9g32HnDtbEBIikSW6irXkJ0yeUkv3c3ky6r1zsnuMrkZ/8JX+iJq5F9g3DGU0oOlgdmv6dcdKkCZU7WFMaS20Yte0ntzaNLSZdmpDxOiPs0+tV25dIY5o3LhxPaT8ixlWap3btvmE4owlFqB3v6ulh5w7WOGGjvUW+UfoSJiZgrq25cb3sxbu/2tG/+jVu/2rLhsn5i3tTHe1p3tBvFIQyDqMKRQesf398cKprhSKcCL6qxOSTH/fHJBXzEiZNwLTtOKPfdG9qezz9p0/zYqwixqs9aX60F8fjP2UxLhHnqSyybxjOUoXyv5IKHJ4fCKUCPZHjlQeeHwglQ3q9QSQgbay9fYdQAPrgjQJQgbTx5cdPhALQh7Tx4v0HhALQR/dG+frtO0IBKCBttN8or95MEQpAgU4oHz99RigABTqhTF6+7oSimkKh3BVrohUK3ygAZTqh8I0CUKYTCt8oAGXuhHLW/AVt4higqk9d1QAAAABJRU5ErkJggg==" InformativeScreenshot="67aedb7f6d5d95a26a9fb7b9478f0015.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Click Edit Company&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Edit Company" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?company=BDM&amp;bookmark=50%3bEQEAAACLAAAAAAJ7%2f0IAVwBFAEwATAAgAEYAQQBSAEcATwAAAAJ7AzEAMQA4&amp;node=00000000-bd62-0000-152c-2100836bd2d2&amp;page=388&amp;dc=0&amp;signInRedirected=1&amp;runinframe=1" DesignTimeRectangle="870, 247, 31, 29" DesignTimeScaleFactor="1" FriendlyName="'A'" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aria-label='Abrir Assist-Edit' idx='2' tag='A' /&gt;" Guid="c6151fe0-501f-4194-b937-9b18d967b993" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACMAAAAhCAYAAABTERJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC0SURBVFhH7c6hDsMgFIXhvQqqj9UHmZvjIermcHVzc7jrcLg5HA53RjrapCS3gmQBcb+EJpzQ5L9hIGPGGGO6nd0ppgeJ4UgMR2I4EsORGI7EcNpikoPRC1afylB83lj0EzaUe5H8K+8Grnpea4uhB5RSmDSV4SeYedvn9VxDetr2u72uaYtBhCeCj+V6CHDW5W8lehD5/Ne1xpj/kBiOxHAkhiMxHInhsDG9zu6IGcFAMcAXwg9ywr+n7moAAAAASUVORK5CYII=" InformativeScreenshot="90eb4ea54ac409168bdadcda00a829d7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Click Company Name &quot; + in_StrCompanyName]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click in_StrCompanyName" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?company=BDM&amp;bookmark=50%3bEQEAAACLAAAAAAJ7%2f0IAVwBFAEwATAAgAEYAQQBSAEcATwAAAAJ7AzEAMQA4&amp;node=00000000-bd62-0000-152c-2100836bd2d2&amp;page=388&amp;dc=0&amp;signInRedirected=1&amp;runinframe=1" DesignTimeRectangle="240, 289, 249, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'AUTOTRANSPORTES VISION'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aria-role='grid' tag='TABLE' innertext='*{0}*' /&gt;&lt;webctrl tag='A' aaname='{0}' /&gt;&quot;, in_StrCompanyName)]" Guid="ef3d23f7-1b7d-4558-8036-1c910091f2a3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAP0AAAAdCAYAAABhcWp+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU5SURBVHhe7Z07bls9EIW9QK8phZu0brwAQ1tQbXgDKYwAKVy4MLyGJN0Nhy/N4wxJJQgQhFN8gHUvOc9zhEB/8d98/fZ6BEGwDzfff/w8giDYhzB9EGxGmD4INiNMHwSbEaYPgs0I0wfBZoTpg2AzwvRBsBlh+iDYjKtM/3z6fNzcn4839fzt6eG4OX0RzzIvp3r+/Xi8T3c/AVi8HEe8Px3PLdbH+bgV7y7cPr2nMygHuy+oZ72ae0z5jvqXz78cd06+PCvnnX8f5EV9t7prrYi7F+eu2J9fP8f23ShzzLnE3wW9z0sMexadR/WUuT4cjx/yeekFPa/kWXh6WMvdsLvlvYDe9J7y/qoG+fNG21H3D4uVMPmBjvMZcJdYNz0N7f503N3bwc5Nz5/j5ZRG1KDrsLQ4cFw7bLdxun9KvaDF5tgPUCAUrws3i0j18XLun8XZRBEVi1kNKc1UhcBrNmItRtUmhDsYCX1SvyDvAcQR8eX88+xFPen9U/vs7ErnAPvPc037sXr7fdOv5u5fkjp3Out9oeW9KA0+P615omiRn8X5n5OWRe3Uq+NVYtn0VDw1hsQFBUeYognQYB4wXgiMAeNaIXmLpiXTuSwgZZ4W+5GEYIbLzsMaLtjYVF/ru9RqcvdzrA/Qw/IOBkKf1S8pYpMG0Dl53WAXAvWealmss8z1DOpxjNPwZnF1brQzjuxt7c6K6UvceayxV4lF01PCWtSiCDNqaAXb4HgwzpeEiQuEBhdN8eozFKc/o3Mynqgzx/ZFZntifYzMmBDzXJw33MEoz6R+DfUj4+t5W7FDTWTs2dX997O0J9Eb0AnHmcVy7snOLsje8l6MVjVO7VyfV+Uf17xmerrcC9fL/lPT23gS8B7G1efKZ7NQuttrBcPmselvNjQjkPw+idvUYs+K5cP6Gfy9Xlz+bAXimz7Vx1it36BmYT4786f4drf8rL6nke/5XOnv4S450ABX5J7trGNj5jr17AULpl/NP/EqsWR6KGAmsH/J9E3c+McevBBjBBZbiwwtLvevltoW3eH1zhbI32vjOvd802uhW1D9FtrbZXZ2Ft4eyz3/C8K715DvZV6uJcc4jb9gerHjPnsvZnl+1Y+QPOdMMxW9F6SLBdO3pWkuRQ5Nb57bBq2AOGAgcABy2LkmfUYbqMPEoGPnOyX/vE5PnIqJGcU8xdnSI4oLdzDJI5H1Iy45wE5csRfkPuTZa/YPRZ3jopoYziyWcw9mKWc/nkPWl4nj1M61uLRLioP0LWPPTQ8NpoblnIFCRA0699138LwetjUIrkfdA7GbsOjHPV8gciZjMY2Eod7pZefPViCwtyWhXBjXnGjxluavELXMZ95R72yNJVb5cQ8Yp+HNYjm3399VpocGXzD9NG7C6UXPbGp6VwgiQfmGEecccXoNUh5TMOWYDqMBhiJqWFzaIDZ9a/Ye0zkZq8ygPVszkK6n5uHmBWJtX0K8xqtNP6kfA+ag3pX76e8TqK/XzM8WVvcP51pnif/pXBnMYll7NY/OPzK9+c9pOa6uY8X09TPI33K4mlNxxqbPTXqD1CIpn71/Ush7+F0enojhC9YsCQiJKDFTHDjsCu8Txm5n2FDrZ16vFjFcgEDPDNzJeXTdpVduct/0Mn6fwaR+jzJPtD8tdhlbznS0K37P7subq19XZTSLxErugt2ZPCt7W4vreAJq0dFM7s/rv9xpNS39kBcEwf9DmD4INiNMHwSbEaYPgs0I0wfBZoTpg2AzwvRBsBlh+iDYjPh/2QXBVrwevwB36REm8h1WIgAAAABJRU5ErkJggg==" InformativeScreenshot="64130080f3c815f7a73b56b2e2e9fee6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Click Accept&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Accept" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?node=00000000-bd62-0000-152c-2100836bd2d2&amp;page=388&amp;company=BDM&amp;dc=0&amp;bookmark=50%3bEQEAAACLAAAAAAJ7%2f0IAVwBFAEwATAAgAEYAQQBSAEcATwAAAAJ7AzEAMQA4&amp;signInRedirected=1&amp;runinframe=1" DesignTimeRectangle="710, 597, 91, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Aceptar'" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' aaname='Aceptar' /&gt;" Guid="c4a6721f-3e99-494c-8089-0602cea35394" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF8AAAAkCAYAAADvqeb3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOHSURBVGhD7ZrPaiJBEMZ9kxz3mEfwmEfwETzm6AsEJKccAvGQQyAHwwZWyIIkgUi8hCFImOC6GgaDBgwjGBjBwxzm8G1VTc/4J80uLPa4m/QHX2HbNfb4657qPkwOVhuThb9BpfC//uzhy9Excnv71gbNjJk1K4VvwWdnZs1K4euSrM1ZmEsk6RKszVmYSyTpEqzNWZhLJOkSrM1ZmEsk6RKszVmYSyTpEqzNWZhLJOkSrM1ZmEsk6RKszVmYSyTpEqzNWZhLJOkS1urTLgYyUojba03/JzMrM/j5pykQzeBHhH/U1OYYca0NN4zgD2/0/RuyMJdI0iWsz3VczmgQv4XyiOhHryhr8wz4+gUBDR18Wvjfn+HTGO49fb4fy3jyeSFnq9bCbRBKnyjwUJC+cxwMpwJQFE5xeV2Jr0vBtlDxk2sjDKi9w/2Pb+q7RHHJy989o0dPQ6pwjEo1vo/dIf9OCLc/jsectNN7XKdZmcAv8WoH/cFDbrfg8oC+i60k57SNHqdQWXI6DoqNNpyRh+JeRcEgoE9NFOouHGmOccC/peAzrMHQRanh0gTGUHuPVeSOz1G4f40naNRCofYNebput/+G3hONU7tAicqhTBtB5vuJxyOFLygdq/szYFYG8JtwmIf6czkCWuHHAG84kcnYR6HPNSmip0Gt6NQ0KZy6OFHqyek90ucE/tJEevHGnqzYP5adG9zKYn/BLrUT+KtP5rrNMg9fwdJp0KHVSTknE27RZKxem67s91qEvwxWTdhv4G/Xu3AmMwRRFK961hJ88ycylmH4ySrnctLFWepX2QO4rucpr6hKi9NYvT4GGfptKhkXS97hkqDAhiNnfo3aX3hzl/Yq/OTIGzyjXKffqjY1K/8jwD904/oedAXyvK+iVvsMlzVqJ8Ci6UrNr1Ie16wwrdHFOw/uxBNQ8yeD+ju0J/B1M9k85hNZVzkM+6GLkx9J20OpdoVyX9X8jwY/36GzPSkpL4veUicRv1+X9nbDWzqBBJNufNo5vMLZJIwBiUL4tHnKZCar2vcIetzL/e7DxXwPoNPS/CREk11fbNP4NMmu8P5wZcewNfX8f7Ewl0jSJfzztvA3aAvf+m8szCWSdAnW5izMJZJ0CdbmLMwlknQJ1uYszCWSdAnW5izMJZJ0CdbmLMwlkuyLstn53Yuy9hXxbMyM370ibpW9LPyNCfgFZcmauGs9UzAAAAAASUVORK5CYII=" InformativeScreenshot="6daadbfe581bf15219be593d74bd9aeb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Assign DisplayName="Assign out_BooSelectCompanyName" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_BooSelectCompanyName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK0SURBVDhPjVJbSFRRFN3XHv6ETY4hQtEQEZWV1E8ffQcR9FURBdVEEVRURiSF4VUxRyfHaZzm5ah3ymbsIUr9+WH2UspXJVpqOlOmWNp4c1Skn7Pad7pUDEQtWJzD5qzFOntv+huU+XlTzez3SDXTw3e9/B9QFAP56/L3vuxRq2e+Q+PBzt4IuQIKeZR/GFXWmakypEqVIZFW2xgXazQG7oEqapjVKtn92frrBPhC2VJlEOStheStFQv9IeRGZ1EQncPiqjohOapA1/2gcp/GI7pKh6fORL6gqok5KtIfNmNrZAJZw5+xaXAMG/pHkdbQBCpzQ7J5tVMl2W7Q1QxvkP93C0yR0diELeEv2Px+HJkDo1j/bgRrez9gTU8YKcodSNfcgqw3BJU65bhW6/YBbpLxZj2S3QGRNTSOjQNjODoyiYbpOSjRGewbHsOq7kGs7OxHUqFNGCv8Yvej1imPqpooPiq9WWe6+5DJcdf1fURwagYP2OD+tzkE1VnUMH1cc0ZjKGPama6pWIRqYr8NzK0dv+LeUedQr4sDUz/FNziNbZINvsbgYAN3lA0Udd60p7VLNVaFsOBygVj9Zggmjrtn8BNck9Pw8uOdvWGkPXuFZU+6kHT4OFKPnRT7bt8N28f5C3E4/DKVc3dlq0gpLseK9rfIeNGL9LYeLH/+GqlPurG0pQPJRTZQjgzKLQKduaj8FGuw8/bZPCpdc4FOnRdLrE6ksdD49BUMLZ1IaW7HosuFoOOnhZRvFZRfymO0JGyl1WXm0YCKHYLO5ogk8wlsd/qwzVMNaf8hSKcvCCmvRJBcArpSck5XJaC4IpssDpWu2rHM5salgXCchjJOls/CPItKecUJW5gIi93EBsqulrZIITdR446mxywslSlb/mP7/gGZO1w4MR0pYGp3vZwAoh+wp93GQ78NrwAAAABJRU5ErkJggg==" InformativeScreenshot="a0ed78a443151d5be3ae19c7ee0e316a.jpg" Selector="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" Title="*Dynamics 365 Business Central*" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="596,161" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[&quot;Exception Message &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Did It Select Company Name? &quot; + out_BooSelectCompanyName.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

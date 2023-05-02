@@ -1,0 +1,380 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Dynamic365_SearchDocumentNumber" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrFilterColumn" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrFilterDocumentNumber" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooSearchDocumentNumber" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>682,5102</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Dynamic365_SearchDocumentNumber_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Dynamic365_SearchDocumentNumber" sap:VirtualizedContainerService.HintSize="692,5037" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="vStrFilterPanel" />
+      <Variable x:TypeArguments="x:Boolean" Name="vBooFilterPanel" />
+      <Variable x:TypeArguments="x:Boolean" Name="vBooClearFilter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch Dynamic365_SearchDocumentNumber" sap:VirtualizedContainerService.HintSize="630,4926" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="592,4189" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Search Document Number&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Search Document Number" sap:VirtualizedContainerService.HintSize="530,3946" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,3729" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="aria-pressed" DisplayName="Get Attribute vStrFilterPanel" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[vStrFilterPanel]" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V3">
+                    <uix:NGetAttributeGeneric.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/Default?runinframe=1" DesignTimeRectangle="1119, 221, 24, 38" DesignTimeScaleFactor="1" FriendlyName="''" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aria-label='Alternar filtro' tag='BUTTON' aaname='*panel de filtros' /&gt;" Guid="0ed51646-90df-452c-b397-06290fd2a537" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAqCAYAAACgLjskAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADeSURBVFhH7ZQ7CsJAEIb3NpYewAt4KltrC0HERptUtkEs9RIiitqaxFLtRn8hEHH2JcM2mcBHlszjg+zsGkr8mOJaUkrM/fGklKhQHBWKo0JxWio8FRV1RhMyg+FfoBY9uN6s8FLeqDdd0Gp3+In5QA1q0YOLW3/p9nim7nhG6324FLmoQS0XB849jJGGyIB3aEKkoTLgFQKXNEYGgoSAk8bKQLAQbN6N6wmsJxnfuFwbUUKcrf48+7ybay7Xhgq/aIeweam7LmkbUUIJVCiOCsVRoTgqFMdky5zSkdMLCKxxUgLsm3QAAAAASUVORK5CYII=" InformativeScreenshot="f0d3c92f91aa71c61d0ca6e9c4104734.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NGetAttributeGeneric.Target>
+                  </uix:NGetAttributeGeneric>
+                  <Assign DisplayName="Assign vBooFilterPanel" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[vBooFilterPanel]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[CBool(vStrFilterPanel.Trim)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Active Filter Panel? &quot; + vBooFilterPanel.ToString]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Click Filter Panel&quot;]" />
+                  <If Condition="[vBooFilterPanel]" DisplayName="If vBooFilterPanel" sap:VirtualizedContainerService.HintSize="434,427" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Filter Panel" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?runinframe=1" DesignTimeRectangle="1115, 221, 32, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="''" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aria-label='Alternar filtro' tag='BUTTON' aaname='*panel de filtros' /&gt;" Guid="1b123c79-2b77-4cba-b2c8-92a1d71655b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAqCAYAAADbCvnoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVFhH7dU9CsJAEIbhvY2lB/ACnsrW2kIQsdHGyjaIpV5CRFFbEy3VbvQTAiGMmdldhBVGeDBkf/KCiXGU2Mfll4JS4u6PJ6XEgiQWJLEgiQVJLEjyn0HH/EqtwYhcrx8Ea7EHt3edKuhc3KgzntFyu2fHm2AN1mIPbrxO/ZNtDidqDye02umjMBdrsJYb53jdQz5RITHgfVNrokJjwDsImqJiYiAoCLio2BgIDoL1+8LlE1Q+iTjHzdWKCsJ/S3c6/3xXj7m5WhYksSBJdFD1pevzEv0mKugXLEhiQRILkliQxIIkFiRx80VG6cjoBbFPhaUQQy26AAAAAElFTkSuQmCC" InformativeScreenshot="2b19f455ef5aa024a0949cf2ba170dda.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Filter Panel" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?runinframe=1" DesignTimeRectangle="1115, 221, 32, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="''" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aria-label='Alternar filtro' tag='BUTTON' aaname='*panel de filtros' /&gt;" Guid="1b123c79-2b77-4cba-b2c8-92a1d71655b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAqCAYAAADbCvnoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVFhH7dU9CsJAEIbhvY2lB/ACnsrW2kIQsdHGyjaIpV5CRFFbEy3VbvQTAiGMmdldhBVGeDBkf/KCiXGU2Mfll4JS4u6PJ6XEgiQWJLEgiQVJLEjyn0HH/EqtwYhcrx8Ea7EHt3edKuhc3KgzntFyu2fHm2AN1mIPbrxO/ZNtDidqDye02umjMBdrsJYb53jdQz5RITHgfVNrokJjwDsImqJiYiAoCLio2BgIDoL1+8LlE1Q+iTjHzdWKCsJ/S3c6/3xXj7m5WhYksSBJdFD1pevzEv0mKugXLEhiQRILkliQxIIkFiRx80VG6cjoBbFPhaUQQy26AAAAAElFTkSuQmCC" InformativeScreenshot="2b19f455ef5aa024a0949cf2ba170dda.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State vBooClearFilter" EnableIfExists="False" EnableIfNotExists="False" Exists="[vBooClearFilter]" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="NCheckState_1" Mode="WaitDisappear" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Timeout="10" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target disappears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?company=BDM&amp;node=00000000-7fd0-0000-1521-5f00836bd2d2&amp;page=50200&amp;dc=0&amp;bookmark=12%3bFQAAAACHM1Nv&amp;signInRedirected=1&amp;runinframe=1" CvType="CloseButton" DesignTimeRectangle="48, 395, 16, 16" DesignTimeScaleFactor="1" FriendlyName="''" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aaname='Borrar este filtro' tag='BUTTON' type='button' /&gt;" Guid="ba0c860a-c590-4c11-90fc-fc53c1b69988" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACRSURBVDhP7ZCxDkBADIY9upVRYmAQg8kTsJh4FJEYRIRjq/ySS06c5hLHZPiWv+2Xto5YN7LJL3zON8JZrFRWDbVdf6khQw09aj6ME7leeL8hBqM0P0l1mQRCP0j4k1UBJwNGQgBBEGcHdzLwipD9IYDA2sk6ASdlhfMiqKhq7SAy1NCj5sY/NMW6UPILn7LRDl1a9YzWZRVqAAAAAElFTkSuQmCC" InformativeScreenshot="0c8c5b9bef649e6d9c6e8b7020f32b60.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Clear Existing Filter? &quot; + vBooClearFilter.ToString]" />
+                  <If Condition="[vBooClearFilter]" DisplayName="If vBooClearFilter" sap:VirtualizedContainerService.HintSize="434,559" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Click Clear Filter&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click Clear Filter" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?company=BDM&amp;node=00000000-7fd0-0000-1521-5f00836bd2d2&amp;page=50200&amp;dc=0&amp;bookmark=12%3bFQAAAACHM1Nv&amp;signInRedirected=1&amp;runinframe=1" CvType="CloseButton" DesignTimeRectangle="48, 352, 16, 16" DesignTimeScaleFactor="1" FriendlyName="''" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aaname='Borrar este filtro' tag='BUTTON' type='button' /&gt;" Guid="fb9e9e51-f0a1-4dd0-9966-213a36f30c03" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACRSURBVDhP7ZCxDkBADIY9upVRYmAQg8kTsJh4FJEYRIRjq/ySS06c5hLHZPiWv+2Xto5YN7LJL3zON8JZrFRWDbVdf6khQw09aj6ME7leeL8hBqM0P0l1mQRCP0j4k1UBJwNGQgBBEGcHdzLwipD9IYDA2sk6ASdlhfMiqKhq7SAy1NCj5sY/NMW6UPILn7LRDl1a9YzWZRVqAAAAAElFTkSuQmCC" InformativeScreenshot="6fae9a930b589950d15f23a44e45c59d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8" />
+                    </If.Else>
+                  </If>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Click Filter&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click Filter" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?runinframe=1" CvElementArea="46, 351, 89, 43" CvTextArea="54, 362, 72, 18" CvType="Button" DesignTimeRectangle="53, 353, 76, 38" DesignTimeScaleFactor="1" FriendlyName="'Filtrar...'" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl aria-label='Agregar un nuevo filtro en un campo' tag='BUTTON' aaname='*Filtrar*' /&gt;" Guid="566b3985-feb7-491b-82d5-506ca96d248b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAqCAYAAAAkqNwKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGQSURBVGhD7ZsxSgNBFIb3EJ5BryB4AU+QE9h5BbESVEgRu2gXG+2CiCCkEGz0AoKdgo0QBIOg6Ub+hRfH5wQ28xebXf/iYzP7/plhvs3bbovPr2kQ+RTF3mEQBCmrojoSSCKBJBJIIoEkEkgigSQSSCKBJBJIIoEkWQK7t3clqdp/QwJJJJCkVoFbw6tQ7O7/4uLhMdw/v4TVXr+8Ioe9kPXzl4HaBVZZJxb4NH4L68eDmdy6kUCSpRToJZlAjFcOerN23xychfHko6x3zoflGHXksMbaUf9P1tbz+Xj/RUgKfH2fhJ3RTdi+vE6ycXJakqoBzMUaqbVjFhWYqlndi8C7FNgcyLRxKp9L7QLtHwJwSBw2R6DV5xE/rCr5qjSqhVM1XzfQrmjR+AHZXql8Lq0UaPKsZUG8l88ztFKgz2CM14Pt5fMmHPfn/basp3ECbYyWxOFwSF+PMwDyYhE+31iBbUACSSSQJEug+EECSSSQRAJJJJBEAkkkkEQCSSSQRAJJJJBEnzmwpKyKqkzDN4YK/oq0CNWyAAAAAElFTkSuQmCC" InformativeScreenshot="b297115e2da9083a017be584ddafe4aa.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Filter Column &quot; + in_StrFilterColumn]" />
+                  <uix:NSelectItem DisplayName="Select Item in_StrFilterColumn" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_StrFilterColumn]" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Version="V3">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                        <x:String>BULKMATIC DE MEXICO S DE RL DE CV</x:String>
+                        <x:String></x:String>
+                        <x:String>Lista Pagos Timbrados</x:String>
+                        <x:String>Conciliaciones…enta bancaria</x:String>
+                        <x:String>Clientes</x:String>
+                        <x:String>Hist. Movimientos Previos</x:String>
+                        <x:String>Hist. Factura…vicio (Ventas)</x:String>
+                        <x:String>Servicios</x:String>
+                        <x:String>Notas de Crédito</x:String>
+                        <x:String>Hist. Notas de Crédito</x:String>
+                        <x:String>Factura Libre</x:String>
+                        <x:String>BULKMATIC DE MEXICO S DE RL DE CV</x:String>
+                        <x:String></x:String>
+                        <x:String>Lista Pagos Timbrados</x:String>
+                        <x:String>Conciliaciones…enta bancaria</x:String>
+                        <x:String>Administrar</x:String>
+                        <x:String>Abrir en Excel</x:String>
+                        <x:String>Acciones</x:String>
+                        <x:String>Navegar</x:String>
+                        <x:String>Menos opciones</x:String>
+                        <x:String>CTE0017CP02019113/03/2023PagoC23/0001098ALIMENTACION PLASTICA, S.A. DE C.V.-7,967.24-7,967.240.0013/03/2023TRANSFEREN7295795</x:String>
+                        <x:String xml:space="preserve">CTE0586CP02019421/03/2023PagoC23/0001097BASELL POLIOLEFINAS, S. DE R.L. DE C.V.USD-106.02-106.020.0021/03/2023TRANSFEREN7295772Error de solicitud de selloCRP202Error:CRP20204:  El valor del campo TotalTrasladosBaseIVA16 no es igual al redondeo de la suma del resultado de multiplicar cada uno de los importes de los atributos BaseP de los impuestos trasladados registrados en el elemento TrasladoP donde los at</x:String>
+                        <x:String>CTE0586CP02019516/03/2023PagoC23/0001095BASELL POLIOLEFINAS, S. DE R.L. DE C.V.USD-1,549.99-1,549.990.0016/03/2023TRANSFEREN7295635</x:String>
+                        <x:String>CTE008514/03/2023PagoC23/0001092FORMOSA PLASTICS CORP. USAUSD-5,367.27-5,367.270.0014/03/2023TRANSFEREN7295538</x:String>
+                        <x:String>CTE0369CP02019321/03/2023PagoC23/0001091RTP COMPANY DE MEXICO, S DE R.L. DE C.V.USD-992.96-992.960.0021/03/2023TRANSFEREN7295429</x:String>
+                        <x:String>CTE042315/03/2023PagoC23/0001090REACCIONES QUIMICAS, S.A. DE C.V.USD-21,095.76-21,095.760.0015/03/2023TRANSFEREN7295363</x:String>
+                        <x:String>CTE0979CP02019015/03/2023PagoC23/0001089PLASTICOS URIBE SA DE CVUSD-6,960.00-6,960.000.0015/03/2023TRANSFEREN7295319</x:String>
+                        <x:String>CTE096417/03/2023PagoC23/0001088AKTION TRADE SERVICES S.A DE C.VUSD-406.00-406.000.0017/03/2023TRANSFEREN7295311</x:String>
+                        <x:String>CTE052313/03/2023PagoC23/0001087IMPORTADORA DE FILTROS, S.A.P.I. DE C.V.-28,443.93-28,443.930.0013/03/2023TRANSFEREN7295305</x:String>
+                        <x:String xml:space="preserve">CTE030714/03/2023PagoC23/0001086KELLOGG DE MEXICO  S DE RL DE CVUSD-2,096.28-2,096.280.0014/03/2023TRANSFEREN7295281</x:String>
+                        <x:String>CTE057316/03/2023PagoC23/0001084DIAMOND INTERNACIONAL DE MEXICO, S.A. DE C.V.-13,920.00-13,920.000.0016/03/2023TRANSFEREN7295216</x:String>
+                        <x:String>CTE042315/03/2023PagoC23/0001083REACCIONES QUIMICAS, S.A. DE C.V.-382,006.41-382,006.410.0015/03/2023TRANSFEREN7295180</x:String>
+                        <x:String>CTE023117/03/2023PagoC23/0001081THERMO FISHER SCIENTIFIC (MONTERREY)USD-1,144.86-1,144.860.0017/03/2023TRANSFEREN7291072</x:String>
+                        <x:String>CTE000717/03/2023PagoC23/0001077AFTON CHEMICAL DE MEXICO, S.A. DE C.V.USD-11,929.21-11,929.220.0017/03/2023TRANSFEREN7290932</x:String>
+                        <x:String>CTE048721/03/2023PagoC23/0001076CALUMET SPECIALTY OILS DE MEXICO,USD-7,943.80-7,943.780.0021/03/2023TRANSFEREN7290871</x:String>
+                        <x:String>CTE078921/03/2023PagoC23/0001075NEXEO PLASTICS MEXICO S DE RL DE CVUSD-53,685.07-53,685.070.0021/03/2023TRANSFEREN7290549</x:String>
+                        <x:String>CTE007521/03/2023PagoC23/0001073EXXONMOBIL SERVICIOS PETROLEROS MEXICO,-1,682,074.99-1,682,074.990.0021/03/2023TRANSFEREN7290528</x:String>
+                        <x:String>CTE007521/03/2023PagoC23/0001072EXXONMOBIL SERVICIOS PETROLEROS MEXICO,-1,180,716.76-1,180,716.760.0021/03/2023TRANSFEREN7290526</x:String>
+                        <x:String>CTE030521/03/2023PagoC23/0001071INEOS STYROLUTION MEXICANA, S.A. DE C.V.USD-4,962.48-4,962.480.0021/03/2023TRANSFEREN7290466</x:String>
+                        <x:String>CTE030517/03/2023PagoC23/0001070INEOS STYROLUTION MEXICANA, S.A. DE C.V.USD-23,224.36-23,224.360.0017/03/2023TRANSFEREN7290382</x:String>
+                        <x:String>CTE084917/03/2023PagoC23/0001069METAL ONE STEEL SERVICE DE MEXICO S.A. DE C.V.USD-4,700.32-4,700.360.0017/03/2023TRANSFEREN7290271</x:String>
+                        <x:String xml:space="preserve">CTE005417/03/2023PagoC23/0001068CONVERTIDORA DE POLIETILENO  S.A.-1,921.52-1,921.520.0017/03/2023TRANSFEREN7290267</x:String>
+                        <x:String>CTE075617/03/2023PagoC23/0001067BRIGHT PACKAGING, S.A. DE C.V.USD-5,703.72-5,703.720.0017/03/2023TRANSFEREN7290246</x:String>
+                        <x:String xml:space="preserve">CTE005417/03/2023PagoC23/0001066CONVERTIDORA DE POLIETILENO  S.A.-9,688.83-9,688.830.0017/03/2023TRANSFEREN7290242</x:String>
+                        <x:String xml:space="preserve">CTE005417/03/2023PagoC23/0001065CONVERTIDORA DE POLIETILENO  S.A.-9,572.26-9,572.260.0017/03/2023TRANSFEREN7290236</x:String>
+                        <x:String>CTE003421/03/2023PagoC23/0001064BASF MEXICANA, S.A. DE C.V.-136,102.80-136,102.800.0021/03/2023TRANSFEREN7290187</x:String>
+                        <x:String>CTE080117/03/2023PagoC23/0001062BONLAM SA DE CV-342,267.39-342,267.390.0017/03/2023TRANSFEREN7290090</x:String>
+                        <x:String>CTE006121/03/2023PagoC23/0001058DOW QUIMICA MEXICANA, S.A. DE C.V.-774,427.02-774,427.020.0021/03/2023TRANSFEREN7290076</x:String>
+                        <x:String xml:space="preserve">CTE008417/03/2023PagoC23/0001057FOL  MEX, S.A. DE C.V.-12,230.40-12,230.400.0017/03/2023TRANSFEREN7290064</x:String>
+                        <x:String>CTE044809/03/2023PagoC23/0001056PLASTICS TECHNOLOGY DE MEXICO, S. DE R.L. DE C.V.USD-13,340.00-13,340.000.0009/03/2023TRANSFEREN7289850</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?node=00000000-7fd0-0000-1521-5f00836bd2d2&amp;page=50200&amp;company=BDM&amp;dc=0&amp;bookmark=12%3bFQAAAACHM1Nv&amp;signInRedirected=1&amp;runinframe=1" DesignTimeRectangle="48, 435, 250, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT ComboBox2933-input'" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='text' /&gt;" Guid="4bc277b1-9796-492d-a2ae-2bb35ea45ce8" InformativeScreenshot="e01e6a2400e9316ce3581bee690982a6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Filter Document Number &quot; + in_StrFilterDocumentNumber]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into in_StrFilterDocumentNumber" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Text="[in_StrFilterDocumentNumber]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?runinframe=1" CvType="InputBox" DesignTimeRectangle="48, 375, 250, 29" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT b1pmee'" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='text' aria-label='Nº documento*' /&gt;" Guid="3c2c4331-df02-4ebf-b3d9-23cd8a8aa792" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAP4AAAAhCAYAAAD5/harAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACWSURBVHhe7dMhEsIwAADBfiV/xfBhqEpxmMJMbXMr1py/7fXeD6DF+BD0HX97PIHF/Rx/zgksyvgQZHwIMj4EXR5/jHFqwD0ZH4KMD0HGhyDjQ5DxIcj4EGR8CDI+BBkfgowPQcaHIONDkPEhyPgQZHwIMj4EGR+CjA9Bl8cH1mF8CDI+BBkfgv6OD6ztND7QYXzI2Y8P1q5hL41qGGcAAAAASUVORK5CYII=" InformativeScreenshot="2fe99b7fae60042d9021c4ef685090df.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Filter Date" sap:VirtualizedContainerService.HintSize="434,199" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="daf24825-0c13-47d0-ba0d-10d1c9419c51" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V3">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/?runinframe=1" CvType="InputBox" DesignTimeRectangle="48, 375, 250, 29" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT b1pmee'" FullSelectorArgument="&lt;webctrl src='https://crm.bulkmatic.mx/BULKQA/*' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='text' aria-label='Nº documento*' /&gt;" Guid="52c3741b-8f57-44b5-b440-e70973877a50" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAP4AAAAhCAYAAAD5/harAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACWSURBVHhe7dMhEsIwAADBfiV/xfBhqEpxmMJMbXMr1py/7fXeD6DF+BD0HX97PIHF/Rx/zgksyvgQZHwIMj4EXR5/jHFqwD0ZH4KMD0HGhyDjQ5DxIcj4EGR8CDI+BBkfgowPQcaHIONDkPEhyPgQZHwIMj4EGR+CjA9Bl8cH1mF8CDI+BBkfgv6OD6ztND7QYXzI2Y8P1q5hL41qGGcAAAAASUVORK5CYII=" InformativeScreenshot="2fe99b7fae60042d9021c4ef685090df.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NKeyboardShortcuts.Target>
+                  </uix:NKeyboardShortcuts>
+                  <Assign DisplayName="Assign out_BooSearchDocumentNumber" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_BooSearchDocumentNumber]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK0SURBVDhPjVJbSFRRFN3XHv6ETY4hQtEQEZWV1E8ffQcR9FURBdVEEVRURiSF4VUxRyfHaZzm5ah3ymbsIUr9+WH2UspXJVpqOlOmWNp4c1Skn7Pad7pUDEQtWJzD5qzFOntv+huU+XlTzez3SDXTw3e9/B9QFAP56/L3vuxRq2e+Q+PBzt4IuQIKeZR/GFXWmakypEqVIZFW2xgXazQG7oEqapjVKtn92frrBPhC2VJlEOStheStFQv9IeRGZ1EQncPiqjohOapA1/2gcp/GI7pKh6fORL6gqok5KtIfNmNrZAJZw5+xaXAMG/pHkdbQBCpzQ7J5tVMl2W7Q1QxvkP93C0yR0diELeEv2Px+HJkDo1j/bgRrez9gTU8YKcodSNfcgqw3BJU65bhW6/YBbpLxZj2S3QGRNTSOjQNjODoyiYbpOSjRGewbHsOq7kGs7OxHUqFNGCv8Yvej1imPqpooPiq9WWe6+5DJcdf1fURwagYP2OD+tzkE1VnUMH1cc0ZjKGPama6pWIRqYr8NzK0dv+LeUedQr4sDUz/FNziNbZINvsbgYAN3lA0Udd60p7VLNVaFsOBygVj9Zggmjrtn8BNck9Pw8uOdvWGkPXuFZU+6kHT4OFKPnRT7bt8N28f5C3E4/DKVc3dlq0gpLseK9rfIeNGL9LYeLH/+GqlPurG0pQPJRTZQjgzKLQKduaj8FGuw8/bZPCpdc4FOnRdLrE6ksdD49BUMLZ1IaW7HosuFoOOnhZRvFZRfymO0JGyl1WXm0YCKHYLO5ogk8wlsd/qwzVMNaf8hSKcvCCmvRJBcArpSck5XJaC4IpssDpWu2rHM5salgXCchjJOls/CPItKecUJW5gIi93EBsqulrZIITdR446mxywslSlb/mP7/gGZO1w4MR0pYGp3vZwAoh+wp93GQ78NrwAAAABJRU5ErkJggg==" InformativeScreenshot="2752c2d789e1fa157ba36fe81fe34548.jpg" Selector="&lt;html app='msedge.exe' title='*Dynamics 365 Business Central*' /&gt;" Title="*Dynamics 365 Business Central*" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="596,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Exception Message &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Search Document Number Exception Message " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Did It Find Document Number? &quot; + out_BooSearchDocumentNumber.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

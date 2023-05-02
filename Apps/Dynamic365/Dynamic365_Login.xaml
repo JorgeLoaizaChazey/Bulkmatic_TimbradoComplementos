@@ -1,0 +1,310 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Dynamic365_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrDynamic365URL" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorAssetName" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooLogin" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>668,3881</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Dynamic365_Login_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="102">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Dynamic365_Login" sap:VirtualizedContainerService.HintSize="668,3816" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
+      <Variable x:TypeArguments="x:String" Name="vStrUsername" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch Dynamic365_Login" sap:VirtualizedContainerService.HintSize="606,3705" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="568,2846" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Login&quot;]" />
+          <ui:GetRobotCredential AssetName="[in_StrOrchestratorAssetName]" CacheStrategy="None" DisplayName="Get Credential in_StrOrchestratorAssetName" FolderPath="[in_StrOrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="506,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[vSstPassword]" Username="[vStrUsername]">
+            <ui:GetRobotCredential.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:GetRobotCredential.TimeoutMS>
+          </ui:GetRobotCredential>
+          <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always" DisplayName="Use Browser Edge: in_StrDynamic365URL" sap:VirtualizedContainerService.HintSize="506,322" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="5e34596a-5e87-4458-8866-21ab45c4cfc4" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="44ae3d836243f63336d917e3546e50e0.jpg" Selector="&lt;html app='msedge.exe' title='Este es Dynamics 365 Business Central.' /&gt;" Title="Este es Dynamics 365 Business Central." Url="[in_StrDynamic365URL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: in_StrDynamic365URL" sap:VirtualizedContainerService.HintSize="506,2058" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="5e34596a-5e87-4458-8866-21ab45c4cfc4" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,1841" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DelayBefore="3" DisplayName="Check App State out_BooLogin" EnableIfNotExists="False" Exists="[out_BooLogin]" sap:VirtualizedContainerService.HintSize="410,247" sap2010:WorkflowViewState.IdRef="NCheckState_1" Mode="WaitDisappear" ScopeIdentifier="5e34596a-5e87-4458-8866-21ab45c4cfc4" Timeout="30" Version="V3">
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/SignIn?ReturnUrl=%2FBULKQA%2F" DesignTimeRectangle="383, 179, 560, 297" DesignTimeScaleFactor="1" FriendlyName="'if (!navigator.cookieEn…'" FullSelectorArgument="&lt;webctrl class='ms-nav-minimal-border' tag='DIV' /&gt;" Guid="d59f111f-27f3-49c8-9295-4be13546758b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjQAAAEtCAYAAAAfuvrNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAB77SURBVHhe7d1/rG1pXd/xaa2/qiKKtcXSqSKgtrZEDHW0tLTjgQCFjKJSiVgMkIm0p5UWi5mYiRMxY0vFMy2aCZhpsRkdZcR4OZCJpCGSkvAHyc0l4Q8SEhL+uBkSEpqQkJAQsrs/a59nn2c/Z+19zrl33z3r2ff1Tt45Z6/1rGc9a+015/vZz1r7zh0zAACAzhFoAABA9ywDzXve8x6SJMmuLKwEmuc///kkSZJdKNCQJMnuFWhIkmT3CjQkSbJ7BRqSJNm9Ag1JkuxegYYkSXavQEOSJLtXoCFJkt0r0JAkye4VaEiSZPcKNCRJsnsFGpIk2b0CDUmS7F6BhiRJdq9AQ5Iku1egIUmS3SvQkCTJ7hVoSJJk9wo0JEmyewUakiTZvQINSZLsXoGGJEl2r0BDkiS7V6AhSZLdK9CQJMnuFWhIkmT3CjQkSbJ7BRqSJNm9Ag1JkuxegYYkSXavQEOSJLtXoCFJkt0r0JAkye4VaEiSZPcKNCRJsnsFGpIk2b0CDUmS7F6BhiRJdq9AQ5Iku1egIUmS3SvQkCTJ7hVoSJJk9wo0JEmyewUakiTZvQINSZLsXoGGJEl2r0CzBb/0U88+17T7jQ/fca5t3yRJ8nwFmi04FmBa024swLS2fZMkyfMVaLbgWIBpTbuxANPa9n07+ZKXvGT24he/eHTdFMz4Xv7yl6841q5X89/9m9/85tF12/IFL3jB7LWvfe3s/vvvn73tbW8bzulYu+ILX/jCYUxp/5a3vGXl+khf7fsRz+uz9Yd/7K7ZD/2Lf7niP/6RHxltuw2/59/+yuzOX3rT6Lqp+49+9Edn3//TPzv7e2+4d/A59/z07Idf+E9G207R57zyntk3/PFfDD/H1rNvBZotOBZgWtNuLMC0tn0XX//61w9/1OO6on/33Xcv27zyla8cisHVq1dnH/nIR0bbT8V77rln9tnPfna49q5fvz7a5mYshW5s3WXM2Fq++tWvzj71qU/N3vGOdwzne2y7Hsw1lWO51dfK5z//+WE/OZdf+cpXht8ffvjh0bYJMF/84heHdqX9lStXluvzno5x2Wvob7/1vtkdT/zfFf/6X/yf2d+674FbEmy+7s//cvbNjzw2um6qJsh896/dP5yX9lx9w6N/PrrNtsy+x5bfiAljGXN+jq1n3wo0W3AswLSm3ViAaW37LuYPeeGhhx4abfPII4+ctJgNoeZFL3rR7Mtf/vItCQnb9NOf/vRQrDLmfBpPMHjrW9+6tdmCbQaaj33sY7M3vvGNgxlfgkxCY/jMZz4zhMqxbXswwTLXzNi6bfnOd75zdtdddw2/531+3/veN5y7BPa6Xc5twk7+FtXtM8bSJr+HvAflPYmve93rlm0uYgk0KXLx+/71L8ye/l8eGpaliI9tczNmBugf/NN/NrpuimYG5lsefu/sjg/91ey7fv03Z8976cuG5Qkaz3nVPbNn/odfPbPNtnza7/ze7Dt+67+NrrsRBZr9VqDZgmMBpjXtxgJMa9t3sQSaFP7Pfe5zZ9Zn+v0LX/jC7Etf+tLQLuEgy1Ogpj5zEBIKyusUpbDuk/tl3WagqWcIau+7775hzB//+MdH13PcXJ/hXe9613JZrtfM5CTs1G1by3VSh5wbsQSadnlmHr7xD//szPLbzQSKhJkEvbH1t9LcHhJoeFEFmi04FmBa024swLS2fRdLoEnBDPljXq8/PDwcln/iE58YfpZAk0+r7SfWFIx77713aJPt8gk4MwvpMz/zDEKZ4Snb1M89jIWD3OJKUY+vfvWrV9alv8y4ZPv6k3jZZ8gsTX6P+cQdcsxlTHV/l3UXgSY+9thjw7hzvnNec8tkrF3Ofdbn98xExATSnLv3v//9Qz9jswx5D1L4M4a0ybmp17/mNa9Zvu853+nrve997/LYc1upbJ+f7WxMtmlnSmLGkr8J2e7RRx9daZO+M2NYxpQ+6m3PM9diyHteluW8hfOehSnX/M2+t+sCzd989/9euTX0fT/384N1m/i8l71ieJ6kXpZZmGf+yq8OxfgZ9//W7O//wuk5a/vJcyhl/fe+9hdnz/iN3x4c21dM+8yUpO+/+8v/fngGqF6fmZM7f+lNQx9p88zD/7TS5gde+rLhmLMu/Tz7Z16zsn1t2ubcpN3Y+jEz+1SOPTNcz3vZv1pZf5HjLef06/7siWF2qDyzU6/L78+6998N+8n5zusf+ucvHp5R+s7f/K+DOQ/1bUOBZr8VaLbgWIBpTbuxANPa9l1MwQgpepmK/+AHP7iy/qMf/ehQcDOrEUphy7JY2qV4ZianJtukfchtq9ymCiVMfPKTnxxe16Rd+kshLmOrKfvLtZTx1iS8pN+yz/Mox3Kj7irQJHCEFPicnxx3+7xTCnjObzl/CaCZncqtrJznvK95f7Jtgk/ZLkEhpE3GkNtboT435b1P32n3xBNPDDN2eQ4lIST95jr58Ic/PPSfPvL+le3b46vf2zwnlN8z1ow563MtZcYw/WRdwnaehSrbX8Tcgsr5qENrZmZyjeT3EnrHZmHK9VMfw404FmiGQv6hvxqKY1n2rb//PwfrdrHdPoX5r33gI7Nv+l9/OhTbb33XH6zM9LT9pE1mIlKAyzZ5nT7boJTnerI8fea2WJ7HSd//8Md/Ylif20PpI8uz/tvf8T9mX/8nx8sC/qw3vXk4roS17CdhIX3V+6gtx/aDdx+Mrm9NWMm+y8xKxpL9JbiUNhc53pz3Ydl82zy3k99j1pUx5WeOLceS/SZIpX1m1p7+4DuH40q79F/2LdDstwLNFhwLMK1pNxZgWtu+i6Ww5I97ilIKSfmEnU+yKVAppJsCTWZRUjxiCmQKQQp9il0pDlmXT+8ppuk3hSy8/e1vH4pxlpVnRrJN+ZScMWWmJ20yi5P9Pfjgg8t12S7rMsaQopj22X9IAS7BI9uHzAbkdXmG4kYt/Y6tu4znBZoy25CZkfr5jrpNuTVVxpPzUN670iYhKOGjvg2X96gu6nnvUvQTJsqy8t7XY8xsWcj7mvejLC/vd5kpiu3xZUwZW3k/i2XmJNdGPcbYzvq05rgzzoSuBKAcQzsblT4TxsrzNYXsrw4+ZSavkFux6fuy10tdIGMKYGYGvvs///rKp/uLBppv/oM/GoJC3aaeIRkLNCnEmaUoyzLLkmKfgl2W5ZZP9nPnv3nDclmKeAJEZoHyOjM2afODd//ksk2OoXwTKcf1HfNiX9bFdoanNs+wpP+xda0Z89f/yQdmTzt6eOW8DcFrvt/ycO9FjzcmxNSBJJbznbHV+8m5aG+L5bykbQl8As1+K9B0Yh1oSohIyMi6/BFP4ckf+02BJrcfwgMPPLDst1gKXD3zU2YcMntQty3LU5DKWBJISqErllmEugjVy0v7UD71xxxjyLGUZTfjrgJNDKVNmX2p1+dc1uczbRJe2lmGFPOE1npZa0JBKK/Le98ea0JD9lEvG3t2pT6+jCczO+1MYG3ex7zvl5khyW2xcl7Sf/qog1bMODKzlOurhLgys5hQU9qlr1wr5b+JnLP8d1BfSxexFMgyC/A33vehoeAmlDz3Fa9atrtooElhzqxBXWxr1wWaNljktk36LQ8Qf0u2G5lNecYDDy5nL3J7KdtkhqltFzPbkVmbsXVjZpyl7/PM7Er2nds+9fI8OJzlJURc9HjjpkCTWZl6+ZjP/rmfX9m3QLPfCjRb8I5H/9+5pt3sL+en+Bzbvot1oEkByUOT5Y97fi9ft90UaMrzN5mpyevaEmjqsFOWjQWLkH4zlhS9QvaRwFO3abetj6W024dAk4AWyu2kMhtTznfWtzMeOe6xAlzex3pZZs0ya5VAlNmIwqZt4rp9hPoc18eXsBDWPQcUc62EBKZcK5mhGmu3yWzXzlBlHAk77UxL2d/Y80XFhPxQ3647zzaQxB84eOkQShIASoG9aKAZbuvMX3/TI48NRb7MTBTHAs1YaFgGhJPnQzKWcoumNvsp+0+YSCDLrEqeXynbFjPrlLYJR3mOZV3oKn7bQ+++8AxNZkNyq60dXwJU9lluJ2XZRY43bgo07XmN5fmgzN7kXGU8aSvQ3B4KNFtwLMC0pt1YgGlt+y62IaB8Oi/T7uXWQSlqY4EmhTCkWOV1bQkvZbtYnttIEa3bptCE+nZHQkweCk1xyu2NBIj8zCftetuYZzhCHXz2IdCUc1jeixT4HH+ZBcnzIinUdeG/aKDJuc2MTfafGY3MWGRZ3Wabgaa8B+V6W2fWl+sqMyjl2C9j9pnzUl4nqI+Nt9zGq6/R1nJt1jNP5zkWaOJzX/GqYXl5juaigSamYCYMZHkCRn0r5EYDTX5PeClBobVslwCWh3gTRDIT8l3zoFEHlzzPkrCW/vK8SWZQyrrW9JN2F3mGJmNI6GrHVSwzKvl9G4GmXhZzKy7Hm/OemaocZwmXAs3toUCzBccCTGvajQWY1rbvYhtoUqBDilxmaMq0/6ZAU55faYtyisBYoCkzCilU9afl8ik4t7DaT9EJPyH9lEJXf/Mlt59S5OvbLKEuYKWYlpmOm3UXgSbnIbMmsb4Fk9BRHpRNAMw5K+viurBRh5PyXpdbjMV1t5zqNnHdPsK6QFOevRm7PTlmZqFyGynXY3vr8Twzhlxn5XXGUB4Kri1j2vRNqhJo6hmf81xXIDNLk+V/5z8uZtQSQtpnY2JmQsa2j3mWJdtkpqDcirnRQJPnUHJ7qW23zsxglGNLgW/X59tHeaC4fr6lNSEk25dndDaZB5YTaM6b9blVgSZt87xOvcwtp9tLgWYLjgWY1rQbCzCtbd/FNtDEEhjq92tToMkf+/Iv8qb4pG0evsyn2bFAU/eXQp0CmgdeU3zSTx5eTfs8R5ExpFjnk3aZoUkByu8pctku22cs2b6+lRHqgpviGBJ60u95swTneasDTcabc5Djam+HlFs35fy239a5SKApAS+zMmV9QlOKfhjbpvZGAk3Me57ZkjqgbTK3ecK692tdPzl39bNGZWawzOAVy0PK7TfHai9yW6p1XYEssxPla80prCnYdfFP8c6tjbHti9m+LqI3Gmie/uDvDrM9Y/+rgU0hIg/qtqGg+Kw3/fLKPsb8tv/+7mHmo34Yubbsuxxn/RX1tk28bKDJN5bqduveryxr/yHE8lCwQHN7KNBswbEA05p2YwGmte27mD/mKUr17aIUuCyri3UKZ5aV4pfAEsv6PAya4JHZghSwhKL88S991UWzmGc+8mxM2qeIZvtSVDKe8pXxhJw8T1OPMcU+y7IuBTK3m9p/6yT7bW9r5bZKxpjtLvM8xJjbDDQ5/oSAmPOQ85Iim1mydYU8oSBBL8fZrsuyseV1OMm5TihM0U+RT1DMecw+S5t2m9p1+wibAk1uH+XYcow5tpzDXB/ldk7e14SPLC/XQWbf2lm7Yq7hhNq8/9kmfebZr+yjPncJPgk5GU/2l2so10Pa1X+bMvuV6z0hMeck/ec81df7RSwFMj9jnjPJrEqW1Z/4cwsjy/J8Rv613Lj4WvQHhuWlXb5FlKKewpx/M+Vpv/vwcPunBJEbDTR5PiQzPfkWVcJDlqcwP+OB317+v6HyLafMxmRsmR0q33oq6zOWfK082+ZWU249nfe/LsgtrBLanvY7vz/0lf3mfORcpY/SNuctoS/7zf4zjtyyq79ZdZlAk2d9EuLy/1567skD2usCTc7LcHtvfnzZd2bW8q2ptBVobg8Fmi04FmBa024swLS2ffPm3VagSaBIkS0mbKUgZ1Zg0wOx5RZd+/Xn2AbOYp6Nyj7K6wSHhIWQop1g0LZpXxfX7SNts015neNrb4klUOQ4C9l3+ftQnoUqJLi1syq16Sv7rMk+24Abc2uy7j+BsL2NlBCckFNImwS0i84oFcu/eVKbbxOlwLZtU0zLg6b5mYJeti9tykOwxRTaUoxjQlIdlHKrZuxWVkJR+q2/NZRbQCVcDJ48M1K+pn3nL75hCBRlfW4n1bebMpbltnNznGXbTSaM5dhLQChmfOWW3NDux+4awkvGtWwzD0x3ngSqeKnjnYeuhJT0k/OdZe35LuYWYfZV9puvjyf4pW35n1H6n1PutwLNFhwLMK1pNxZgWtu+efNuK9DcqCmyKbY38i2g2hTqHMe6GZBbaWaJsu82LGQsWX7evz9TW/q6yHGk303vXc5p1l/2uZ2bMbecMouw7rmTmACQNpv+jZebMf+uSvpfd6sp69qvTxczpmFsI7euLmLZ96ZjK+doG8efY7zMeHPc5d+d4e2lQLMFxwJMa9qNBZjWtm/evCl4m4rirTQBILeG2ltqJMntKtBswbEA05p2YwGmte2bN+9TGWjKcx15DmRsPUlyOwo05C0wQSbf0sozHu03x0iS21egIW+B+eZNgsxTNTNEkrebAg1JkuxegYYkSXavQEOSJLtXoCFJkt0r0JAkye4VaEiSZPcKNCRJsnsFGpIk2b0CDUmS7F6BhiRJdq9AQ5Iku1egIUmS3SvQkCTJ7hVoSJJk9wo0JEmyewUakiTZvQINSZLsXoGGJEl2r0BDkiS7V6AhSZLdK9CQJMnuFWhIkmT3CjQkSbJ7BRqSJNm9Ag1JkuxegYYkSXavQEOSJLtXoCFJkt0r0JAkye4VaEiSZPcKNCRJsnsFGpIk2b0CDUmS7F6BhiRJdq9AQ5Iku1egIUmS3SvQkCTJ7hVoSJJk9wo0JEmye9cGGgAAgF4QaAAAQPcINAAAoHsEGgAA0D0CDQAA6B6BBgAAdI9AAwAAukegAQAA3SPQAACA7hFoAABA9wg0AACgewQaAADQPQINAADoHoEGAAB0j0ADAAC6R6ABAADdI9AAAIDuEWgAAED3CDQAAKB7BBoAANA9Ag0AAOgegQYAAHSPQAMAALpHoAEAAN0j0AAAgO4RaAAAQPcINAAAoHsEGgAA0D0CDQAA6B6BBgAAdI9AAwAAukegAQAA3SPQAACA7hFoAABA9wg0AACgewQaAADQPQINAADoHoEGAAB0j0ADAAC6R6ABAADdI9AAAIDuEWgAAED3CDQAAKB7BBoAANA9Ag0AAOgegQYAAHSPQAMAALpHoAEAAN0j0AAAgO4RaAAAQPcINAAAoHsEGgAA0D0CDQAA6B6BBgAAdI9AAwAAukegAQAA3SPQAACA7hFoAABA9wg0AACgewQaAADQPQINAADoHoEGAAB0j0ADAAC6R6ABAADdI9AAAIDuEWgAAED3CDQAAKB7BBoAANA9Ag0AAOgegQYAAHSPQANgpzz++OPk3ojpINAA2CmKAPYF1/K0EGgA7BRFAPuCa3laCDQAdooigH3BtTwtBBoAO0URwL7gWp4WAg2AnaIIYF9wLU8LgQbATlEEsC+4lqeFQANgpygC2Bdcy9NCoAGwUxQB7Auu5Wkh0GAzTx7PDg+OZtdOXu4X12ZHBwezo/08uMmiCGBfcC1PC4GmJ64dzQ5GC3AK8y0KHXsdaPBUoAhgX3AtTwuBpicSaA4PRwKGQIN+UASwL7iWp4VA0xMJNEfX5hnjcPh5ytlAM7Q5ODjxcHb85MmKOdeODmaHx8fD7ZZh/dDX4vbL6esTSqA5mR1q1y/Gcjw7Psy60zFkH6X9Yb3zmvR9eDw7XfvkvJ96rNWYlsdw9lizr9Mh1dus7vvsWNP27Lkp29bHszwPJy9x4ygC2Bdcy9NCoOmJk0CzKPxtEa+K7RA+1hfjRdEur0sAWH297HvYdr7+dMGw7xIUFsFpNRSsBq52rBUbA8267ZpjnbMSaObHfrrrjP10bGfHuhpohvX1eHIey2uBZmsoAtgXXMvTQqDpiWWgmbNSYOsiPx4E6qKf3+uZi42vxwp5VehXw0tYDQkhber+l2wMNGfHteCcQLPCan+bx3p23O322A6KAPYF1/K0EGh6og40c04LdBtozhbhOlTcdKCpgsh4SCi3bCrHEsc5gWbxerH96fjOCzSn2yw87e/8QNMc55z1YQk3iiKAfcG1PC0Emp5oAk0p3kfX2kBztgjXhXljgJmz8nrdDM1JZ+Mh4WwwGOXcQFOoj2lToGmPfbW/8wNNu+9148HNoAhgX3AtTwuBpifOBJo5Q+DITMRpkR8Kd130m1By+UBTr0/hPw0NZ0PCYvsz4xxlNUQsxj0eIE7H1ISWnJPleJpQMoy96X9lXKvth3HXASt9l9fNOcSNowhgX3AtTwuBpifGAs2cMwFmzmJZue2yum5jgJmz8vqkkB9X/dVtxwLNfOkQOk73Px5SQj3Ow+Nr1YxI00e9j5MQU5ZnvMvV9brDo9nRhWdoFgyhZrl9FW4Emq2hCGBfcC1PC4EGwE5RBLAvuJanhUADYKcoAtgXXMvTQqABsFMUAewLruVpIdAA2CmKAPYF1/K0EGgA7BRFAPuCa3laCDQAdooigH3BtTwtBBoAO0URwL7gWp4WAg2AnZIiQO6LmA4CDQAA6B6BBgAAdI9AAwAAukegAQAA3SPQAACA7hFoAOyUsW+KkL2K6SDQANgpigD2BdfytBBoAOwURQD7gmt5Wgg0AHaKIoB9wbU8LQQaADtFEcC+4FqeFgINgJ2iCGBfcC1PC4EGwE5RBLAvuJanhUADYKcoAtgXXMvTQqABsFMUAewLruVpIdDgKebJ2fHhwezg8Hj+2/z3o/zEPqMIYF9wLU8LgaZDnjw+nB0czEPAiYfH24kA146219eFefJ4dnxt/vPa0VaPBdNFEcC+4FqeFgJNV9SzGadcOzqaJRPcLE9JoMFthyKAfcG1PC0Emo4YZmaOzokuTx7PDtfM3pTtE1wW6w9ni9UnQWm53SIgLdofn6w7CU1N//VwVmaOVldU21Tha1g+f30yOxNXAtW6fZXtTl6iLxQB7Auu5Wkh0HTDInRszjPXZkd14W+2KYFj5XU129PO0Czal9Cz4Mnjo9PXQxA5CRb5vZk5WpAxVX3U7UpgOR3Q/PVp27X7Emi6RhHAvuBanhYCTTcknKyGi5bFjEpT5hMETpadWd8Eg9FA0/a3QsLK5pBxto9N22wKbdV26BpFAPuCa3laCDTdcP4MTcLDmWdgEhpOZkQ2hou8ulCgyTant4FWbiENsyiry4Y+VtrHk2A2EoIyhtNdbtgXukURwL7gWp4WAk1HjAeMU0bXb5qhGQLDZQJN2tezRKvbL6luK6WPMyGrsDHQXHBf6A5FAPuCa3laCDRdkaJ+cCa0LL/lNASEeoZj5BmaMwHlEoGmDSD1cy01dbvh9zW3yjYFmk37GtkO/aAIYF9wLU8LgaY7FiGlvoWzklGGYj++7rxAc7rtYtnZ9ifLSv/zILXcfnm7KTYBZmVdtjvpc1OgmbN2XwJN1ygC2Bdcy9NCoAGwUxQB7Auu5Wkh0ADYKYoA9gXX8rQQaADsFEUA+4JreVoINAB2iiKAfcG1PC0EGgA7RRHAvuBanhYCDYCdoghgX3AtTwuBBsBOUQSwL7iWp4VAA2CnpAiQ+yKmg0ADAAC6R6ABAADdI9AAAIDuEWgAAED3CDQAAKB7BBoAANA9Ag0AAOgegQYAAHSPQAMAALpHoAEAAN0j0AAAgO4RaAAAQPcINAAAoHsEGgAA0D0CDQAA6B6BBgAAdI9AAwAAukegAQAA3SPQAACA7hFoAABA9wg0AICBxx9/nJcU00GgAQAMpEB/7Wtf4wUVaKaFQAMAGBBoLqdAMy0EGgDAgEBzOQWaaSHQAAAGBJrLKdBMC4EGADBwewWa67Mrh4ezK9fH1l1MgWZaCDQAgIHNgebq7Ojwyuz66LpiQsLB7Ojq2Lq516/MDg+OZlfH1t1Sz47r+pXD9eO8oALNtBBoAAADNx9o+vH69eujyy+jQDMtBBoAwMCFA01mWo6uDLMeBwdzq6Bz9aiagbl6tFgfj64u+hh+nvRR1i1nbTKTcjS7cuVwvqy9HbSYZVltv5hpKftYzrhU+z28sggu9bjqbU7HXu87686/HSXQTAuBBgAwcKlAUxX8q0enYWIZHEZvL1WBpnYeQBbBYxFaSgipTQg5s3y5XV4vAsnV7GPkttZyXAk7KwGs7K/Zd9qNjbVSoJkWAg0AYOByMzRVsZ8X/zbQjAaQJtAkTCxnSoblJZTU25x4MqNTP/eysv3gImQNy6vQsmi76LcOX4PLY2n3vSZ8VQo000KgAQAM7DLQrKxfGyrOuggxa8JJ7UkAKvsQaPYfgQYAMLDNQLMIFG04OQ0JdbAYnmm5YKCJV48WMzHDds1MzIrVOJfj2njLSaDpGYEGADCw1UAzdwgc5XbQ0L4KCUPgWaw7nG9z3gzN2b4WyxczNicO45vvo7xeec7ntN+VbZZ9CTS9I9AAAAY2Bxq2CjTTQqABAAwINJdToJkWAg0AYECguZwCzbQQaAAAAwLN5RRopoVAAwAYSIHm5cR0EGgAAED3CDQAAKB7BBoAANA9Ag0AAOgegQYAAHSPQAMAALpHoAEAAN0j0AAAgO4RaAAAQPcINAAAoHsEGgAA0D0CDQAA6B6BBgAAdI9AAwAAukegAQAA3SPQAACA7hFoAABA9wg0AACgewQaAADQPQINAADonrWBhiRJsicLy0ADAADQKwINAADonNns/wPKSTJyIukUSgAAAABJRU5ErkJggg==" InformativeScreenshot="df4c911c7725f76a650afd5a4472216c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Este es Dynamics 365 Business Central.' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Should You Sign In to Dynamic 365? &quot; + out_BooLogin.ToString]" />
+                  <If Condition="[out_BooLogin]" DisplayName="If out_BooLogin" sap:VirtualizedContainerService.HintSize="410,1307" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,1157" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Enter Username&quot;]" />
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vStrUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="5e34596a-5e87-4458-8866-21ab45c4cfc4" Text="[vStrUsername]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/SignIn?ReturnUrl=%2FBULKQA%2F" DesignTimeRectangle="663, 357, 180, 27" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT UserName'" FullSelectorArgument="&lt;webctrl id='UserName' tag='INPUT' name='UserName' /&gt;" Guid="f755323b-9a2c-4519-844b-cd137663c1d0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALgAAAAfCAYAAABUKgeRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB4SURBVHhe7dJBCcBAEMDA+reyIrevO+ijBsIMxEGehTCDk3YHnxkp0/EZHAoMTprBSTM4aQYnzeCkGZw0g5NmcNIMTprBSTM4aQYnzeCkGZw0g5NmcNIMTprBSTM4aQYnzeCkGZw0g5NmcNJ+B5cqHXdwKDI4Ybsvb0c4YheXutoAAAAASUVORK5CYII=" InformativeScreenshot="16db80845a144947d02097af02e6cae9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Este es Dynamics 365 Business Central.' /&gt;" SearchSteps="Selector" Version="V1" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Enter Password&quot;]" />
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vSstPassword" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="Simulate" IsPassword="True" ScopeIdentifier="5e34596a-5e87-4458-8866-21ab45c4cfc4" SecureText="[vSstPassword]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/SignIn?ReturnUrl=%2FBULKQA%2F" DesignTimeRectangle="663, 389, 180, 27" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT Password'" FullSelectorArgument="&lt;webctrl id='Password' tag='INPUT' name='Password' /&gt;" Guid="83c794ca-567b-4e47-966b-4e1a7e32aaf8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALgAAAAfCAYAAABUKgeRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB7SURBVHhe7dIxDcAwEMDA8h+LqFDK5DslUoYSsO4kM/A1EGZw0vbg9/NKmZZjcCgwOGkGJ83gpBmcNIOTZnDSDE6awUkzOGkGJ83gpBmcNIOTZnDSDE6awUkzOGkGJ83gpBmcNIOTZnDSDE6awUn7HVyqtOzBocjghM18w82G3JpLpswAAAAASUVORK5CYII=" InformativeScreenshot="4b4387e0ab0597b62dcc73dab450635d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Este es Dynamics 365 Business Central.' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Click Login&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5e34596a-5e87-4458-8866-21ab45c4cfc4" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://crm.bulkmatic.mx/BULKQA/SignIn?ReturnUrl=%2FBULKQA%2F" DesignTimeRectangle="766, 436, 76, 19" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Iniciar sesión'" FullSelectorArgument="&lt;webctrl id='submitButton' tag='BUTTON' aaname='Iniciar sesión' /&gt;" Guid="c2b64390-b089-48f3-854e-425300960053" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAXCAYAAACcTMh5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGTSURBVFhH7ZTRbcQgDEA7HOOwC4Pki0XYgjEiF9vBMYT0kkNRe6qRnk4HAdsvJl9gY2qYwMkhApdlMW6CoxG4rqtxERM4iQmcxARO8s8FZojeQ8yjtWvcFJgg+Ah5uFbBpByENFor5AjeBUijtUc55pWjP8/zIg8I/BxyzsP5O7wvEDspRHqrzhWU2BRUh6XA60hIfAb9bmfUNelK7JQAsXSHc/314i5qn+dOqjGko1RcH1mUzkvv2XPXsXHt9fWeE6gCpLAnL4kOr6sSqCkFc6EsqRatwaIP87IP/7OAhDEGnwnJC+U2L7zG62Ljc6NcFZMdqA4vwXqBw4I7gZi8dALNVwl6z8bWsfq71ewn+KXSvJLEz/K5+mUTUksf++RlK35VYLN+WsQRlnYiQ7MJrzE+TiAX0MvYk9KF0DfpokAkBe402td1WoPKU/L68Qr/JYEFKrBeL3peJUWCec2XPa868HgWz3NHblB+JUb933yn93ObPXLW4wKNHhM4iQmcxAROMhRo3AOHCLTx3jCBUwPgG96/xy+C5019AAAAAElFTkSuQmCC" InformativeScreenshot="145c6ee612ce962c97d1233db3203a83.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Este es Dynamics 365 Business Central.' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,302" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Dynamic 365 Login Done&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="44ae3d836243f63336d917e3546e50e0.jpg" Selector="&lt;html app='msedge.exe' title='Este es Dynamics 365 Business Central.' /&gt;" Title="Este es Dynamics 365 Business Central." Url="[in_StrDynamic365URL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,161" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Exception Message &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="496,447" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign vSstPassword" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="ss:SecureString">[vSstPassword]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="ss:SecureString">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign vStrUsername" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[vStrUsername]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Login Dynamic 365? &quot; + out_BooLogin.ToString]" />
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

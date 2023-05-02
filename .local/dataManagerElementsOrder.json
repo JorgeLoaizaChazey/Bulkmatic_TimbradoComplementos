@@ -1,0 +1,530 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDtbProcessMonitoring&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vJsonProjectName&Sequence_2",
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Mail/Mail_SendNotifications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vCstAttachmentsCollection&Sequence_1",
+        "vBooAttachments&Sequence_1",
+        "vStrAttachmentsCollection&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BooAlert",
+        "in_CstAttachmentsCollection",
+        "in_StrTemplate",
+        "in_StrBody",
+        "in_StrSubject",
+        "in_StrTo",
+        "in_StrBcc",
+        "in_SrtCc"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooRequirePermits&Sequence_9",
+        "vBooSelectCompanyName&Sequence_9",
+        "vStrExceptionMessage&Sequence_9",
+        "vBooUploadQueues&Sequence_9",
+        "vBooReadFile&Sequence_9",
+        "vDtbPayments&Sequence_9",
+        "vBooSelectModule&Sequence_9",
+        "vBooDownloadStampedPaymentsList&Sequence_9",
+        "vBooFilterListDateRegister&Sequence_9",
+        "vBooLogin&Sequence_9"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_DtbProcessMonitoring",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_SelectModule.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrDynamic365Module",
+        "out_BooSelectModule"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/FilterListDateRegister.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooFilterPanel&Sequence_1",
+        "vStrFilterPanel&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_FilterListDateRegister.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrFilterDate&Sequence_1",
+        "vBooClearFilter&Sequence_1",
+        "vStrFilterPanel&Sequence_1",
+        "vBooFilterPanel&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooFilterListDateRegister",
+        "in_IntSubtractFinalDays",
+        "in_IntSubtractInitialDays",
+        "in_StrDateFormat",
+        "in_StrFilterColumn"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_DownloadStampedPaymentsList.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooDownloadStampedPaymentsList",
+        "in_StrDownloadPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_Download.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooDownloadedFileExists&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooDownload",
+        "in_StrDownloadPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CreateFolders.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrDocumentsPath&Sequence_1",
+        "vStrProjectFolder&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_JsonProjectName",
+        "io_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Excel/Excel_ReadFilePayments.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Excel/Excel_ReadFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooReadFile",
+        "out_DtbDataTable",
+        "in_StrFileRange",
+        "in_StrFileSheet",
+        "in_StrFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_UpdateQueues.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrExceptionMessage&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooUploadQueues",
+        "in_AstColumnsPayments",
+        "in_StrOrchestratorQueueName",
+        "in_StrOrchestratorQueueFolder",
+        "in_BooUploadQueues",
+        "in_DtbPayments",
+        "out_DtbProcessMonitoring"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vTspDelay&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooObtainUnstamped&Sequence_1",
+        "vBooValidateVerificationAttempts&Sequence_1",
+        "vBooValidateFiscalInvoiceFolio&Sequence_1",
+        "vBooUpdatePaymentData&Sequence_1",
+        "vStrPACTaxInvoiceNumber&Sequence_1",
+        "vBooAddQueues&Sequence_1",
+        "vStrFolioPayment&Sequence_1",
+        "vBooStampPayment&Sequence_1",
+        "vBooValidateDocumentType&Sequence_1",
+        "vBooReadFile&Sequence_1",
+        "vDtbReconciledMovements&Sequence_1",
+        "vBooDownloadReconciledMovements&Sequence_1",
+        "vStrStampedType&Sequence_1",
+        "vBooSearchDocumentNumber&Sequence_1",
+        "vStrExceptionMessage&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DtbProcessMonitoring",
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_SearchDocumentNumber.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooClearFilter&Sequence_1",
+        "vBooFilterPanel&Sequence_1",
+        "vStrFilterPanel&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSearchDocumentNumber",
+        "in_StrFilterDocumentNumber",
+        "in_StrFilterColumn"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Excel/Excel_ProcessMonitoring.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooProcessMonitoring&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DtbProcessMonitoring",
+        "in_StrPathProcessMonitoring",
+        "in_StrSheetsProcessMonitoring",
+        "in_AobAddDataRow"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Excel/Excel_AddTrackingObservations.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooProcessMonitoring&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DtbProcessMonitoring",
+        "in_StrPathProcessMonitoring",
+        "in_StrSheetsProcessMonitoring",
+        "in_AobAddDataRow"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_IdentifyStampedType.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_StrStampedType",
+        "in_StrPACTaxInvoiceNumber",
+        "in_StrFolioPayment"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_DownloadReconciledMovements.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooDownloadReconciledMovements",
+        "in_StrDownloadPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_ValidateDocumentType.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooValidateDocumentType",
+        "in_StrValueDocumentType",
+        "in_StrFilterDocumentType",
+        "in_DtbReconciledMovements"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic36_StampPayment.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooStampPayment",
+        "out_StrFolioPayment"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_AddQueueItem.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooAddQueuesItem",
+        "in_AstQueueItems",
+        "in_StrOrchestratorQueueName",
+        "in_StrOrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_AddQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooAddQueues",
+        "out_StrExceptionMessage",
+        "in_StrOrchestratorQueueFolder",
+        "in_StrOrchestratorQueueName",
+        "in_AstQueueItems"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_StampPayment.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrFolioPayment",
+        "out_BooStampPayment",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_UpdatePaymentData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TspDelay",
+        "out_StrFolioPayment",
+        "out_StrPACTaxInvoiceNumber",
+        "out_BooUpdatePaymentData",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_ValidateFiscalInvoiceFolio.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooValidateFiscalInvoiceFolio",
+        "in_StrPACTaxInvoiceNumber",
+        "in_StrFolioPayment"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_ValidateVerificationAttempts.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vIntMaximumRetryNumber&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooValidateVerificationAttempts",
+        "in_IntNumberRetry",
+        "in_IntValidationTime"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/TakeScreenshot.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&Sequence_1",
+        "ScreenshotFileInfo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Folder",
+        "io_FilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_ObtainUnstampedImage.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooObtainUnstampedImage",
+        "in_StrPathWithoutPictureStamp"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_BooExecute",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "QueueRetry&Sequence_17",
+        "ScreenshotPath&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_TransactionField1",
+        "in_TransactionField2",
+        "in_TransactionID",
+        "in_SystemException",
+        "in_Config",
+        "in_TransactionItem",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "io_ConsecutiveSystemExceptions"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_SelectCompanyName.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrCompanyName",
+        "out_BooSelectCompanyName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Dynamic365/Dynamic365_ValidatePermitsCompanyName.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooRequirePermits"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

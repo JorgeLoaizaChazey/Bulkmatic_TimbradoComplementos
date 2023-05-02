@@ -1,0 +1,239 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Dynamic365_Download" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrDownloadPath" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooDownload" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>668,3396</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Dynamic365_Download_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Dynamic365_Download" sap:VirtualizedContainerService.HintSize="646,3331" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="vBooDownloadedFileExists" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch Dynamic365_Download" sap:VirtualizedContainerService.HintSize="584,3220" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,2748" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Download&quot;]" />
+          <ui:FileExistsX DisplayName="File Exists vBooDownloadedFileExists" Exists="[vBooDownloadedFileExists]" sap:VirtualizedContainerService.HintSize="484,133" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_StrDownloadPath]" />
+          <If Condition="[vBooDownloadedFileExists]" DisplayName="If vBooDownloadedFileExists" sap:VirtualizedContainerService.HintSize="484,350" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:DeleteFileX DisplayName="Delete File in_StrDownloadPath" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_StrDownloadPath]" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
+            </If.Else>
+          </If>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Download" sap:VirtualizedContainerService.HintSize="484,695" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,404" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Click Save AS&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Save AS" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="183, 90, 119, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Save as'" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Recent downloads' role='list' /&gt;&lt;ctrl name='What do you want to do with*' role='list item' /&gt;&lt;ctrl name='Save as More options' role='menu button' /&gt;&lt;ctrl name='Save as' role='push button' /&gt;" Guid="f3dc21fd-70eb-4ca3-9c2d-5d0e01cbbc2b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAAkCAYAAACpH0VdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHISURBVHhe7ZuxzcIwEIX/fbIFKyQbZAAGoM8OtNSMQEmbbEBHSUpq/3qRnnVYIYCgcHzP0qfkco6N8vkcmvwFNTdNsh21KPt+v4fb7RbGcRSFEmVLdPlE2XNJURaS7QjJdoRkO0KyHSHZjpBsR0i2IyTbEdnLPhwOoaqqCOK5fuI1Wcvuum6C8fV6Dcfj8aGPeJ9sZUPsdrsNp9NpNi8+Z1WVnZJu8VwYuCfd7u21y+USmqZ569XwbI40h/Ewrr03N7KWzepOHzJz+/1+OiLGg0dfxOjLc+SGYQht204yKJrjIUYOfTg2WZrDjolc3/eS/QsoaKl6UqFWICRxh0gXAvOA8TPsHDiv6zrOsQZWIZvYykIMcdxG062UAtF3t9s9iLf3kGevi6U5MOZms5muc6fImVXJtpWVVqjNMYbk8/k8He0CWfofYHk1B0FsXw25kq1sPGD7vgS2snFupSG2VYc+kAyQY79PxCzNgfs5BubC75LsL8CDtluorTJKYw5S06pLFwCx2y/AOa7ZPmBpjnQMu6ByZVXbuPgOyXaEZDtCsh0h2Y6QbEdItiMk2xGS7YgoWx/2lU+UrU92yyfKViu/SbabFsI/7tbZUz6oGQUAAAAASUVORK5CYII=" InformativeScreenshot="ef3d702e7d729eea3d62ce23de182b5a.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_*' idx='*' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="829, 49, 418, 179" FilePath="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" IconBase64="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" InformativeScreenshot="876750abf91c38ac667441b77bd2b579.png" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_*' idx='*' /&gt;" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Save As" sap:VirtualizedContainerService.HintSize="484,1085" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,794" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;File Name &quot; + in_StrDownloadPath]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into in_StrDownloadPath" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Text="[in_StrDownloadPath]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="136, 369, 514, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Diario a'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="09d1e709-04b7-47ef-9c58-43e53d56fb16" ImageBase64="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" InformativeScreenshot="4ce0a801d84858caef1b17bc94c03d6e.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Click Save&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="479864ee-2ab3-4134-a2f9-5b2ecd8e5c61" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="470, 434, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" Guid="d9eff32e-2999-40a2-9b4e-00271dd6eaab" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAeCAYAAAChf3k/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHtSURBVGhD7ZkxbsIwFIZ9A84TiRtwDk/t1qUT9AR4Y2tv4YVKrVoO0ApVDKkY2IoAKQtLq+jVz0nAjl0kIjCO+oZPxPiZ4fPvFySzLMuACAcJDwwJD4wjfLrYQHf0CZ27GbDbD6Ihvfu5dln3awnHAhQ9eFzCZvsDeZ4TDUB3w8kKOoOZI90S3nuYg5isvT9CHE9//KW7henYEo5HgZJ9Ojbbb51yy7E1UMJ9C4nmoFPLsTUg4SeHhAcmbuGSA2OshIP01bSMeIWnAhJTshoLacy3lHiFY7oTAalvrsXEKzyXwFUrSUTqzEletRkFl+q7FETCgJsnwNwwfVriaE0RC0cKkSjKkrkDNyUBkapnFKzlF3O4KcUaowbnVJ1vE0MRufCSMqE76dbLtJKJYqv0qmdvukuMjQlNO4QrUpEUoqyXKZ6AfXqxBtNbfeq1Vv3liVe4VP9KqjZQthYt0enNRrvAccJVuk3Bf78LLkHECS9EuW1g39eZlmsIr+bqLaPeVqil/B+iFb5LYw1fbZughAeGhAfmoHC8XqMLiNOBFxAHheN1UH+89C4mjmf4utKXyaZjS/h0sdYpxwtQSnpz0B3eZ6JLdGo6toQjWNAbvQO7fgZ29UQ0oHPzAl3x5shGHOHEeSHhgSHhQcngF9/RH4T/GO1mAAAAAElFTkSuQmCC" InformativeScreenshot="491ca6d149f827ecdaeafe2db8e93523.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 683, 480" FilePath="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMMSURBVDhPXdJrSFNhHAbwYypep0sphCgJ+lRpmy5nOlAqu+jUee/CijI1AyuIRCnTMG94Ny9l80NUiF2QIAoq3cXpvNfmLtmmZqSGRousVUh7end2rPSB/7f3+Z33/XOo1dkp+yrhKRbMwYoZBPUZwFPpsGt4FBFqhWWv7qlMaOzwZ46uDK/7p4An/W7hyb6AK58Bt2cSgUo9OH0aMq8QNtKDSM1zCI13ranvmyVMzZ5gUg7qXrQGSc3gyj5ih3waAQojDQQo7UDIYB/26R/g4HgHxLPlODWf+w/hdlksBABH+gkc2RwC5e+wTW7AVoWGjBpc1RBCh7uxR3sfscZWHJu9goz5HOSYTwgozssfEk7XIjZJDPAtG4BPxWusq1TDr0aFze0jNGCbIJUcgpEn2K9thchYhayFbOR8PmKitnfO/2YX94JVqoN3lRFrayfg2zCJ9c1T8GuZwIamARrgKKUIH7qPaF0NkkxFEE+fRsbsIVAbJVNwK1TDo2wcrAojQUx2pGQU/jWa234tJvmWh/3gq+4hcqge0WNliNeeg/jdSWR+EIKyfdWlSA+3a2/gXjoOz4q38Loog0dMpYpZEcV/3DsRqmxBxEA1okZLaCBNn4LjEwRwKtDBudAAl6sGuNqQYj08RNfBSrxxgelTwdJbEr68AYK+ahwYzEK8Oh2HDYkQGyLN1JpLOjgV6P8ibmdfwFPUCFbSTQXTJ0DrHF9ajnBFEXb3ZEI0IkKqOsp6VBuWRjnk68w2xJFB3NMfwTOhGZ6JLVZWSluaDQjpLhHwpaWdEfLsuaieNLOwP7YzeTRSQOtUnlZCENDIZT1csp/ZAdstkiVWr6TWlX8dk7Ux1TRuT57W4pCvpRHn80pSbqIBG0QAeCXeWPIWNZu84xtl7Lh6M1tYu0QAC9MmydMKyFiXEXdxux2Ib4BXQpMNAAFAABAABLASgHnCcuwIfRPHPA1BOuzPiK0DK64O3nEN9LBj6ywEWFX+P2QnTvlj3xzzx+CcOwzXMy/gQRbrI77ziwBtzCkmFPUHUkTzg+CHHvkAAAAASUVORK5CYII=" InformativeScreenshot="f45ce1529cf161a8ca78d0eb982ce085.png" Selector="&lt;wnd app='msedge.exe' cls='#32770' title='Save As' /&gt;" Title="Save As" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooDownload" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooDownload]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,161" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Exception Message &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
